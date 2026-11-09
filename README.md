@@ -3,11 +3,9 @@
 SpigotMC Plugin that gives you the ability to tame foxes!
 </p>
 
-> **⚠️ 版本支持说明 / Version Support**
->
-> 由于开发精力有限，本项目**仅保留对最新版 Minecraft 26.3 的支持**，旧版本（1.20.x ~ 1.21.x）的适配代码已全部移除。如果你仍在使用旧版本，请使用原版 [TamableFoxes](https://github.com/SeanOMik/TamableFoxes)。
->
-> Due to limited development resources, this project **only supports the latest Minecraft 26.3**. All legacy version adapters (1.20.x ~ 1.21.x) have been removed. If you are still on an older Minecraft version, please use the original [TamableFoxes](https://github.com/SeanOMik/TamableFoxes).
+ **Version Support**
+ 
+ Due to limited development resources, this project **only supports the latest Minecraft 26.3**. All legacy version adapters (1.20.x ~ 1.21.x) have been removed. If you are still on an older Minecraft version, please use the original [TamableFoxes](https://github.com/SeanOMik/TamableFoxes).
 
 ### WARNING: Do not reload the plugin, you may loose foxes!!
 
@@ -31,10 +29,11 @@ Have you ever wanted to tame foxes? Well, now you can! <b>Use chicken to tame</b
 * Right-click to make the fox sit
 * Shift Right-click with an empty hand to make the fox sleep
 * If the fox is holding a totem of undying, the fox will consume it and be reborn.
-* Foxes attack the owner's target
-* Foxes attack the thing that attacked the owner.
+* Tamed foxes **never** attack creatures on their own — they only attack owner-provided targets:
+  * the thing the owner is attacking
+  * the thing that attacked the owner
+* Wild (untamed) foxes keep vanilla behavior: they hunt chickens, rabbits, fish and turtle eggs.
 * Foxes are automatically spawned inside the world. (Same areas as vanilla foxes)
-* Foxes attack chickens and rabbits.
 * Snow and red foxes.
 * Language.yml
 * Message when a tamed fox dies

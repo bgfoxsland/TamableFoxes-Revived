@@ -33,6 +33,11 @@ public class FoxPathfinderGoalHurtByTarget extends TargetGoal {
     }
 
     public boolean canUse() {
+        // FOX: 驯服的狐狸放弃原版的受击反击行为，只会攻击主人指定的目标（未驯服的野生狐狸不受影响）
+        if (this.mob instanceof EntityTamableFox tamableFox && tamableFox.isTamed()) {
+            return false;
+        }
+
         int i = this.mob.getLastHurtByMobTimestamp();
         LivingEntity entityliving = this.mob.getLastHurtByMob();
         if (i != this.timestamp && entityliving != null) {

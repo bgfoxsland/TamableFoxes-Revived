@@ -23,9 +23,6 @@ public class Config {
     // Does the owner's name show if the foxes name?
     public static boolean doesShowOwnerInFoxName() { return config.getBoolean("show-owner-in-fox-name"); }
 
-    // Check if a tamed fox attacks wild animals.
-    public static boolean doesTamedAttackWildAnimals() { return config.getBoolean("tamed-behavior.attack-wild-animals"); }
-
     // Get worlds that taming is not allowed in.
     public static List<String> BannedWorlds() {
         return config.contains("no-tame-worlds") ? config.getStringList("no-tame-worlds") : new ArrayList<>();

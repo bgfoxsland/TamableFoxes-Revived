@@ -6,6 +6,3 @@ prefix: "&c[驯服狐狸] "
 
 no-tame-worlds:
   - world_nether
-
-tamed-behavior:
-  attack-wild-animals: true
