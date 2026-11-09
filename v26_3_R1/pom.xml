@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>net.seanomik</groupId>
+    <artifactId>tamablefoxes-parent</artifactId>
+    <version>0.0.1-LITE</version>
+  </parent>
+
+  <build>
+    <plugins>
+      <!-- FOX: 26.1 起服务端核心不再混淆、Mojang 也不再发布混淆映射表
+           （没有 remapped-mojang / maps-mojang / maps-spigot），
+           因此移除 SpecialSource 重映射：普通 spigot jar 即 Mojang 官方命名，
+           编译产物可直接在 26.3 服务端运行，无需再 remap。 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <!-- 26.3 服务端为 Java 25（class 文件版本 69） -->
+          <source>25</source>
+          <target>25</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <artifactId>tamablefoxes_v26_3_R1</artifactId>
+
+  <repositories>
+    <repository>
+      <id>mvn-wesjd-net</id>
+      <url>https://mvn.wesjd.net/</url>
+    </repository>
+    <repository>
+      <id>codemc-snapshots-anvilgui</id>
+      <url>https://repo.codemc.io/repository/maven-snapshots/</url>
+    </repository>
+    <repository>
+      <id>spigot-repo</id>
+      <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+    </repository>
+    <repository>
+      <id>codemc-snapshots</id>
+      <url>https://repo.codemc.io/repository/nms/</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>net.seanomik</groupId>
+      <artifactId>tamablefoxes-util</artifactId>
+      <version>${project.parent.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.spigotmc</groupId>
+      <artifactId>spigot</artifactId>
+      <version>26.3-R0.1-SNAPSHOT</version>
+      <!-- FOX: 26.3 没有 remapped-mojang 分类器，普通 jar 即 Mojang 官方命名 -->
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.wesjd</groupId>
+      <artifactId>anvilgui</artifactId>
+      <version>1.10.13-SNAPSHOT</version> <!-- FOX -->
+    </dependency>
+  </dependencies>
+</project>

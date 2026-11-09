@@ -3,6 +3,12 @@
 SpigotMC Plugin that gives you the ability to tame foxes!
 </p>
 
+> **⚠️ 版本支持说明 / Version Support**
+>
+> 由于开发精力有限，本项目**仅保留对最新版 Minecraft 26.3 的支持**，旧版本（1.20.x ~ 1.21.x）的适配代码已全部移除。如果你仍在使用旧版本，请使用原版 [TamableFoxes](https://github.com/SeanOMik/TamableFoxes)。
+>
+> Due to limited development resources, this project **only supports the latest Minecraft 26.3**. All legacy version adapters (1.20.x ~ 1.21.x) have been removed. If you are still on an older Minecraft version, please use the original [TamableFoxes](https://github.com/SeanOMik/TamableFoxes).
+
 ### WARNING: Do not reload the plugin, you may loose foxes!!
 
 ### Default configuration files:
@@ -64,8 +70,11 @@ Have you ever wanted to tame foxes? Well, now you can! <b>Use chicken to tame</b
 ![fox leaping towards chicken](Screenshots/fox-pouncing.gif)
 
 ## Building
-To build you must have every version of spigot starting from 1.14 built and inside your maven cache. To do that, look at [compileSpigotVersions.sh](compileSpigotVersions.sh) that lists all the java commands and the java versions for them.
+Only Minecraft 26.3 is supported, so building is straightforward:
+* **JDK 25** or newer (26.3 is compiled with Java 25).
+* The `org.spigotmc:spigot:26.3-R0.1-SNAPSHOT` dependency is downloaded automatically from the CodeMC NMS repository. Since Minecraft 26.1+ is no longer obfuscated, no remapping (SpecialSource) is needed anymore.
 
-## Metrics collection
-![metrics](https://bstats.org/signatures/bukkit/TamableFoxes.svg)
-Tamable Foxes collects anonymous server statistics through bStats, an open-source statistics service for Minecraft software. If you wish to opt-out, you can do so in the `bstats/config.yml` file.
+Then just run:
+```sh
+mvn clean package
+```

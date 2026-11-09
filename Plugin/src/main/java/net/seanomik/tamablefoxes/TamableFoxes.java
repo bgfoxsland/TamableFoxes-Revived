@@ -7,27 +7,17 @@ import net.seanomik.tamablefoxes.util.io.sqlite.SQLiteHelper;
 
 import net.seanomik.tamablefoxes.util.io.LanguageConfig;
 
-import net.seanomik.tamablefoxes.versions.version_1_20_R1.NMSInterface_1_20_R1;
-import net.seanomik.tamablefoxes.versions.version_1_20_R3.NMSInterface_1_20_R3;
-import net.seanomik.tamablefoxes.versions.version_1_21_R1.NMSInterface_1_21_R1;
-
-import org.bstats.bukkit.Metrics;
 import org.bukkit.*;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.*;
 import java.util.logging.Level;
-import net.seanomik.tamablefoxes.versions.version_1_21_4_R1.NMSInterface_1_21_4_R1;
-import net.seanomik.tamablefoxes.versions.version_1_21_5_R1.NMSInterface_1_21_5_R1;
-import net.seanomik.tamablefoxes.versions.version_1_21_6_R1.NMSInterface_1_21_6_R1;
-import net.seanomik.tamablefoxes.versions.version_1_21_7_R1.NMSInterface_1_21_7_R1;
-import net.seanomik.tamablefoxes.versions.version_1_21_11_R1.NMSInterface_1_21_11_R1;
+import net.seanomik.tamablefoxes.versions.version_26_3_R1.NMSInterface_26_3_R1;
 
 
 public final class TamableFoxes extends JavaPlugin implements Listener {
     private static TamableFoxes plugin;
-    public static final int BSTATS_PLUGIN_ID = 11944;
 
     private boolean versionSupported = true;
 
@@ -47,17 +37,9 @@ public final class TamableFoxes extends JavaPlugin implements Listener {
         LanguageConfig.getConfig(this).saveDefault();
 
         // Verify server version
-        // FOX
+        // FOX: 仅支持 26.3
         switch (Bukkit.getMinecraftVersion()) {
-            case "1.20", "1.20.1" -> nmsInterface = new NMSInterface_1_20_R1();
-            case "1.20.3", "1.20.4" -> nmsInterface = new NMSInterface_1_20_R3();
-            case "1.21", "1.21.1" -> nmsInterface = new NMSInterface_1_21_R1(); // FOX
-            case "1.21.4" -> nmsInterface = new NMSInterface_1_21_4_R1();
-            case "1.21.5" -> nmsInterface = new NMSInterface_1_21_5_R1();
-            case "1.21.6" -> nmsInterface = new NMSInterface_1_21_6_R1();
-            case "1.21.7" -> nmsInterface = new NMSInterface_1_21_7_R1();
-            case "1.21.8" -> nmsInterface = new NMSInterface_1_21_7_R1();
-            case "1.21.11" -> nmsInterface = new NMSInterface_1_21_11_R1();
+            case "26.3" -> nmsInterface = new NMSInterface_26_3_R1();
 
             default -> {
                 Bukkit.getServer().getConsoleSender().sendMessage(Config.getPrefix() + ChatColor.RED + LanguageConfig.getUnsupportedMCVersionRegister());
@@ -77,7 +59,6 @@ public final class TamableFoxes extends JavaPlugin implements Listener {
             if (Config.getMaxPlayerFoxTames() != 0) {
                 SQLiteHelper.getInstance(this).createTablesIfNotExist();
             }
-            Metrics metrics = new Metrics(this, BSTATS_PLUGIN_ID);
         }
     }
 

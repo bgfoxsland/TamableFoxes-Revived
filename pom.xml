@@ -13,14 +13,7 @@
         <module>Plugin</module>
         <module>Utility</module>
 
-        <module>1_20_R3</module>
-        <module>1_20_R1</module>
-        <module>1_21_R1</module>
-        <module>1_21_R3</module>
-        <module>1_21_R4</module>
-        <module>1_21_R5</module>
-        <module>1_21_R6</module>
-        <module>1_21_R7</module>
+        <module>v26_3_R1</module>
     </modules>
 
     <properties>

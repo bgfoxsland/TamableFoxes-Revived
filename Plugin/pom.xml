@@ -97,48 +97,10 @@
     </repositories>
 
     <dependencies>
-        <!-- Entity implementations -->
         <dependency>
             <groupId>net.seanomik</groupId>
-            <artifactId>tamablefoxes_v1_20_R1</artifactId>
+            <artifactId>tamablefoxes_v26_3_R1</artifactId>
             <version>${project.parent.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.seanomik</groupId>
-            <artifactId>tamablefoxes_v1_20_R3</artifactId>
-            <version>${project.parent.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.seanomik</groupId>
-            <artifactId>tamablefoxes_v1_21_R1</artifactId>
-            <version>${project.parent.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.seanomik</groupId>
-            <artifactId>tamablefoxes_v1_21_4_R1</artifactId>
-            <version>${project.parent.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.seanomik</groupId>
-            <artifactId>tamablefoxes_v1_21_5_R1</artifactId>
-            <version>${project.parent.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.seanomik</groupId>
-            <artifactId>tamablefoxes_v1_21_6_R1</artifactId>
-            <version>${project.parent.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <!-- End of entity implementations -->
-        <dependency>
-            <groupId>org.bstats</groupId>
-            <artifactId>bstats-bukkit</artifactId>
-            <version>2.2.1</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -157,19 +119,7 @@
         <dependency>
             <groupId>net.wesjd</groupId>
             <artifactId>anvilgui</artifactId>
-            <version>1.10.11-SNAPSHOT</version> <!-- FOX -->
-        </dependency>
-        <dependency>
-            <groupId>net.seanomik</groupId>
-            <artifactId>tamablefoxes_v1_21_7_R1</artifactId>
-            <version>${project.parent.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.seanomik</groupId>
-            <artifactId>tamablefoxes_v1_21_11_R1</artifactId>
-            <version>${project.parent.version}</version>
-            <scope>compile</scope>
+            <version>1.10.13-SNAPSHOT</version> <!-- FOX -->
         </dependency>
     </dependencies>
 </project>
