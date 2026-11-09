@@ -7,7 +7,7 @@
     <parent>
         <groupId>net.seanomik</groupId>
         <artifactId>tamablefoxes-parent</artifactId>
-        <version>0.0.1-LITE</version>
+        <version>0.0.2-LITE</version>
     </parent>
 
     <artifactId>tamablefoxes</artifactId>
